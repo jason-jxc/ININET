@@ -1,4 +1,4 @@
-# INI-NET
+# ININET
 
 Ported from .Net Standard https://github.com/lukazh/ini-parser-standard
 
@@ -19,7 +19,7 @@ INI data is stored in nested dictionaries, so accessing the value associated to 
 
 ```csharp
 var parser = new ININETFileParser.IniFileParser();
-IniData data = parser.ReadFile("Configuration.ini");
+ININETData data = parser.ReadFile("Configuration.ini");
 ```
 
 Retrieve the value for a key inside of a named section. Values are always retrieved as `string`s.
@@ -44,8 +44,8 @@ Merging ini files is a one-method operation:
 
    var parser = new ININETStringParser();
 
-   IniData config = parser.Parse(File.ReadAllText("global_config.ini"));
-   IniData user_config = parser.Parse(File.ReadAllText("user_config.ini"));
+   ININETData config = parser.Parse(File.ReadAllText("global_config.ini"));
+   ININETData user_config = parser.Parse(File.ReadAllText("user_config.ini"));
    config.Merge(user_config);
 
    // config now contains that data from both ini files, and the values of
