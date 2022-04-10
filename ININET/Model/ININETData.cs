@@ -7,7 +7,7 @@ namespace ININET.Model
     /// <summary>
     ///     Represents all data from an INI file
     /// </summary>
-    public class IniData : ICloneable
+    public class ININETData : ICloneable
     {
         #region Non-Public Members
         /// <summary>
@@ -21,7 +21,7 @@ namespace ININET.Model
         /// <summary>
         ///     Initializes an empty IniData instance.
         /// </summary>
-        public IniData()
+        public ININETData()
             : this(new SectionDataCollection())
         { }
 
@@ -33,14 +33,14 @@ namespace ININET.Model
         ///     <see cref="SectionDataCollection"/> object containing the
         ///     data with the sections of the file
         /// </param>
-        public IniData(SectionDataCollection sdc)
+        public ININETData(SectionDataCollection sdc)
         {
             _sections = (SectionDataCollection)sdc.Clone();
             Global = new KeyDataCollection();
             SectionKeySeparator = '.';
         }
 
-        public IniData(IniData ori): this(ori.Sections)
+        public ININETData(ININETData ori): this(ori.Sections)
         {
             Global = (KeyDataCollection)ori.Global.Clone();
             Configuration = ori.Configuration.Clone();
@@ -54,7 +54,7 @@ namespace ININET.Model
         ///     delimiter characters and data.
         /// </summary>
         /// <remarks>
-        ///     If the <see cref="IniData"/> instance was created by a parser,
+        ///     If the <see cref="ININETData"/> instance was created by a parser,
         ///     this instance is a copy of the <see cref="IniParserConfiguration"/> used
         ///     by the parser (i.e. different objects instances)
         ///     If this instance is created programatically without using a parser, this
@@ -138,7 +138,7 @@ namespace ININET.Model
         /// </returns>
         public object Clone()
         {
-            return new IniData(this);
+            return new ININETData(this);
         }
 
         #endregion
@@ -171,7 +171,7 @@ namespace ININET.Model
         ///     IniData instance to merge into this. 
         ///     If it is null this operation does nothing.
         /// </param>
-        public void Merge(IniData toMergeIniData)
+        public void Merge(ININETData toMergeIniData)
         {
 
             if (toMergeIniData == null) return;

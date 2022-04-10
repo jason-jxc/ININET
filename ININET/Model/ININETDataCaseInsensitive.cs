@@ -3,16 +3,16 @@ using System;
 namespace ININET.Model
 {
     /// <summary>
-    ///     Represents all data from an INI file exactly as the <see cref="IniData"/>
+    ///     Represents all data from an INI file exactly as the <see cref="ININETData"/>
     ///     class, but searching for sections and keys names is done with
     ///     a case insensitive search.
     /// </summary>
-    public class IniDataCaseInsensitive : IniData
+    public class ININETDataCaseInsensitive : ININETData
     {
         /// <summary>
         ///     Initializes an empty IniData instance.
         /// </summary>
-        public IniDataCaseInsensitive()
+        public ININETDataCaseInsensitive()
             : base (new SectionDataCollection(StringComparer.OrdinalIgnoreCase))
         {
             Global = new KeyDataCollection(StringComparer.OrdinalIgnoreCase);
@@ -26,17 +26,17 @@ namespace ININET.Model
         ///     <see cref="SectionDataCollection"/> object containing the
         ///     data with the sections of the file
         /// </param>
-        public IniDataCaseInsensitive(SectionDataCollection sdc)
+        public ININETDataCaseInsensitive(SectionDataCollection sdc)
             : base (new SectionDataCollection(sdc, StringComparer.OrdinalIgnoreCase))
         {
             Global = new KeyDataCollection(StringComparer.OrdinalIgnoreCase);
         }
 
         /// <summary>
-        /// Copies an instance of the <see cref="IniDataCaseInsensitive"/> class
+        /// Copies an instance of the <see cref="ININETDataCaseInsensitive"/> class
         /// </summary>
         /// <param name="ori">Original </param>
-        public IniDataCaseInsensitive(IniData ori)
+        public ININETDataCaseInsensitive(ININETData ori)
             : this(new SectionDataCollection(ori.Sections, StringComparer.OrdinalIgnoreCase))
         {
             Global = (KeyDataCollection) ori.Global.Clone();

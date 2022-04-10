@@ -1,4 +1,5 @@
 # ININET
+1.0.1.0 - [BUG] Namespace fixed.
 
 Ported from .Net Standard https://github.com/lukazh/ini-parser-standard
 

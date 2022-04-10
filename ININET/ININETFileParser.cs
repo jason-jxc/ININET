@@ -28,13 +28,13 @@ namespace ININET
         #region Deprecated methods
 
         [Obsolete("Please use ReadFile method instead of this one as is more semantically accurate")]
-        public IniData LoadFile(string filePath)
+        public ININETData LoadFile(string filePath)
         {
             return ReadFile(filePath);
         }
 
         [Obsolete("Please use ReadFile method instead of this one as is more semantically accurate")]
-        public IniData LoadFile(string filePath, Encoding fileEncoding)
+        public ININETData LoadFile(string filePath, Encoding fileEncoding)
         {
             return ReadFile(filePath, fileEncoding);
         }
@@ -49,7 +49,7 @@ namespace ININET
         /// <param name="filePath">
         ///     Path to the file
         /// </param>
-        public IniData ReadFile(string filePath)
+        public ININETData ReadFile(string filePath)
         {
             return ReadFile(filePath, Encoding.ASCII);
         }
@@ -63,7 +63,7 @@ namespace ININET
         /// <param name="fileEncoding">
         ///     File's encoding.
         /// </param>
-        public IniData ReadFile(string filePath, Encoding fileEncoding)
+        public ININETData ReadFile(string filePath, Encoding fileEncoding)
         {
             if (filePath == string.Empty)
                 throw new ArgumentException("Bad filename.");
@@ -100,7 +100,7 @@ namespace ININET
         ///     IniData to be saved as an INI file.
         /// </param>
         [Obsolete("Please use WriteFile method instead of this one as is more semantically accurate")]
-        public void SaveFile(string filePath, IniData parsedData)
+        public void SaveFile(string filePath, ININETData parsedData)
         {
             WriteFile(filePath, parsedData, Encoding.UTF8);
         }
@@ -117,7 +117,7 @@ namespace ININET
         /// <param name="fileEncoding">
         ///     Specifies the encoding used to create the file.
         /// </param>
-        public void WriteFile(string filePath, IniData parsedData, Encoding fileEncoding = null)
+        public void WriteFile(string filePath, ININETData parsedData, Encoding fileEncoding = null)
         {
             // The default value can't be assigned as a default parameter value because it is not
             // a constant expression.

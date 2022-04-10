@@ -19,7 +19,7 @@ namespace ININET.Model.Formatting
         }
         #endregion
         
-        public virtual string IniDataToString(IniData iniData)
+        public virtual string IniDataToString(ININETData iniData)
         {
             var sb = new StringBuilder();
 
@@ -44,7 +44,7 @@ namespace ININET.Model.Formatting
         ///     delimiter characters and data.
         /// </summary>
         /// <remarks>
-        ///     If the <see cref="IniData"/> instance was created by a parser,
+        ///     If the <see cref="ININETData"/> instance was created by a parser,
         ///     this instance is a copy of the <see cref="IniParserConfiguration"/> used
         ///     by the parser (i.e. different objects instances)
         ///     If this instance is created programatically without using a parser, this

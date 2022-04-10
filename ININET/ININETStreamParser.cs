@@ -35,12 +35,12 @@ namespace ININET
         /// </summary>
         /// <param name="reader">Reader stream.</param>
         /// <returns>
-        ///     And <see cref="IniData"/> instance with the readed ini data parsed.
+        ///     And <see cref="ININETData"/> instance with the readed ini data parsed.
         /// </returns>
         /// <exception cref="ArgumentNullException">
         ///     Thrown if <paramref name="reader"/> is <c>null</c>.
         /// </exception>
-        public IniData ReadData(StreamReader reader)
+        public ININETData ReadData(StreamReader reader)
         {
             if (reader == null)
                 throw new ArgumentNullException("reader");
@@ -52,11 +52,11 @@ namespace ININET
         ///     Writes the ini data to a stream.
         /// </summary>
         /// <param name="writer">A write stream where the ini data will be stored</param>
-        /// <param name="iniData">An <see cref="IniData"/> instance.</param>
+        /// <param name="iniData">An <see cref="ININETData"/> instance.</param>
         /// <exception cref="ArgumentNullException">
         ///     Thrown if <paramref name="writer"/> is <c>null</c>.
         /// </exception>
-        public void WriteData(StreamWriter writer, IniData iniData)
+        public void WriteData(StreamWriter writer, ININETData iniData)
         {
             if (iniData == null)
                 throw new ArgumentNullException("iniData");
@@ -71,12 +71,12 @@ namespace ININET
         ///     Writes the ini data to a stream.
         /// </summary>
         /// <param name="writer">A write stream where the ini data will be stored</param>
-        /// <param name="iniData">An <see cref="IniData"/> instance.</param>
+        /// <param name="iniData">An <see cref="ININETData"/> instance.</param>
         /// <param name="formatter">Formaterr instance that controls how the ini data is transformed to a string</param>
         /// <exception cref="ArgumentNullException">
         ///     Thrown if <paramref name="writer"/> is <c>null</c>.
         /// </exception>
-        public void WriteData(StreamWriter writer, IniData iniData, IIniDataFormatter formatter)
+        public void WriteData(StreamWriter writer, ININETData iniData, IIniDataFormatter formatter)
         {
             if (formatter == null)
                 throw new ArgumentNullException("formatter");

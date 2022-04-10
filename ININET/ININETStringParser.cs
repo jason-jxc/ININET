@@ -9,7 +9,7 @@ namespace ININET
 {
 	/// <summary>
 	/// 	Responsible for parsing an string from an ini file, and creating
-	/// 	an <see cref="IniData"/> structure.
+	/// 	an <see cref="ININETData"/> structure.
 	/// </summary>
     public class ININETStringParser
     {
@@ -71,16 +71,16 @@ namespace ININET
         ///     String with data
         /// </param>
         /// <returns>
-        ///     An <see cref="IniData"/> instance with the data contained in
+        ///     An <see cref="ININETData"/> instance with the data contained in
         ///     the <paramref name="iniDataString"/> correctly parsed an structured.
         /// </returns>
         /// <exception cref="ParsingException">
         ///     Thrown if the data could not be parsed
         /// </exception>
-        public IniData Parse(string iniDataString)
+        public ININETData Parse(string iniDataString)
         {
             
-            var iniData = Configuration.CaseInsensitive ? new IniDataCaseInsensitive() : new IniData();
+            var iniData = Configuration.CaseInsensitive ? new ININETDataCaseInsensitive() : new ININETData();
             iniData.Configuration = Configuration.Clone();
 
             if (string.IsNullOrEmpty(iniDataString))
@@ -153,7 +153,7 @@ namespace ININET
 
 
             if (HasError) return null;
-            return (IniData)iniData.Clone();
+            return (ININETData)iniData.Clone();
         }
         #endregion
 
@@ -236,7 +236,7 @@ namespace ININET
         /// </summary>
         /// <param name="currentLine">The string with the line to process</param>
         /// <param name="currentIniData"></param>
-        protected virtual void ProcessLine(string currentLine, IniData currentIniData)
+        protected virtual void ProcessLine(string currentLine, ININETData currentIniData)
         {
             currentLine = currentLine.Trim();
 
@@ -287,7 +287,7 @@ namespace ININET
         /// </summary>
         /// <param name="line">The string to be processed</param>
         /// <param name="currentIniData"></param>
-        protected virtual void ProcessSection(string line, IniData currentIniData)
+        protected virtual void ProcessSection(string line, ININETData currentIniData)
         {
             // Get section name with delimiters from line...
             string sectionName = Configuration.SectionRegex.Match(line).Value.Trim();
@@ -330,7 +330,7 @@ namespace ININET
         /// </summary>
         /// <param name="line">The string to be processed</param>
         /// <param name="currentIniData"></param>
-        protected virtual void ProcessKeyValuePair(string line, IniData currentIniData)
+        protected virtual void ProcessKeyValuePair(string line, ININETData currentIniData)
         {
             // get key and value data
             string key = ExtractKey(line);

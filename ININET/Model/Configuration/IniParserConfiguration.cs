@@ -255,7 +255,7 @@ namespace ININET.Model.Configuration
         ///     If set to <c>false</c> and the <see cref="ININETStringParser"/> finds a duplicate section
         ///     the parser will stop with an error.
         ///     If set to <c>true</c>, duplicated sections are allowed in the file, but only a
-        ///     <see cref="SectionData"/> element will be created in the <see cref="IniData.Sections"/>
+        ///     <see cref="SectionData"/> element will be created in the <see cref="ININETData.Sections"/>
         ///     collection.
         /// </summary>
         /// <remarks>

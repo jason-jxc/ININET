@@ -8,13 +8,13 @@
     <Company>Jason Hildebrand</Company>
     <Product>ININET</Product>
     <Description>A .NET Standard library for reading/writing INI data from IO streams, file streams, and strings. 
-				 Also implements merging operations, both for complete ini files, sections, or even just a subset
-				 of the keys contained by the files.
+Also implements merging operations, both for complete ini files, sections, or even just a subset
+of the keys contained by the files.
 	</Description>
     <PackageProjectUrl>https://github.com/jason-jxc/INI-NET</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseUrl>https://github.com/jason-jxc/INI-NET/blob/main/LICENSE</PackageLicenseUrl>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Copyright>https://github.com/jason-jxc/INI-NET/blob/main/LICENSE</Copyright>
     <Nullable>enable</Nullable>
   </PropertyGroup>
