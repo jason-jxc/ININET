@@ -19,7 +19,7 @@ using ININETFileParser.Model;
 INI data is stored in nested dictionaries, so accessing the value associated to a key in a section is straightforward. Load the data using one of the provided methods.
 
 ```csharp
-var parser = new ININETFileParser.IniFileParser();
+var parser = new ININETFileParser();
 ININETData data = parser.ReadFile("Configuration.ini");
 ```
 
